@@ -1,0 +1,109 @@
+.full-page{
+    text-align: center;
+    background: linear-gradient(to top , #000 , #1a0b2e);
+}
+
+.about-me{
+    margin-bottom: 40px;
+}
+
+.about-me h2{
+    font-size: 48px;
+    font-weight: 600;
+    color: #C47BE4;
+    margin-bottom: 20px;
+}
+
+.about-me p{
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.skills-heading{
+    font-size: 48px;
+    font-weight: 600;
+    color: #C47BE4;
+    margin-bottom: 40px;
+    display: inline-block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.skills-card-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 900px;
+    padding: 20px;
+    margin: 50px auto;
+    
+}
+
+.skills-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    height: 11vh;
+    transition: transform 0.5s ease  ;
+    position: relative;
+    z-index: 10;
+}
+
+.skills-card:hover {
+    transform: translateY(-10px);
+    border: 2px , solid , #C47BE4;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.main-area:has(.skills-card-container:hover)::before{
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+.main-area:has(.skills-heading:hover)::before{
+    opacity: 0;
+}
+
+@media (max-width:750px) {
+
+    .about-me{
+        margin-bottom: 30px;
+    }
+
+    .about-me h2{
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+
+    .about-me p{
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .skills-heading{
+        font-size: 36px;
+    }
+
+    .skills-card-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        padding: 15px;
+        margin: 30px auto;
+    }
+
+}
+
+@media (max-width:550px) {
+    .skills-card-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding: 10px;
+        margin: 20px auto;
+    }
+}
